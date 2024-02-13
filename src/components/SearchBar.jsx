@@ -1,7 +1,9 @@
 import {React, useState,useEffect} from "react";
+import {data} from "./data.jsx";
 
 export default function SearchBar(){
     const[term,setTerm]=useState("");
+    const[res,setRes]=useState("");
     useEffect(()=>{
         console.log(term)
         //sort here
@@ -14,7 +16,12 @@ export default function SearchBar(){
             <input type="text" onChange={changeTerm}/>
             {(term!="")&&(
                 <div>
-                    {term/*replace with sort results*/}
+                    <div>
+                        {term/*replace with sort results*/}
+                    </div>
+                    <div>
+                        {term/*replace with sort results*/}
+                    </div>
                 </div>
             )}
         </div>

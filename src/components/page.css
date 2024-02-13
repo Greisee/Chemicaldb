@@ -1,0 +1,20 @@
+td{
+    height:50px;
+    width:150px;
+}
+img{
+    width:200px;
+    height:200px;
+}
+.mainPageDiv{
+    display: flex;
+    flex-direction: row;
+}
+th,td{
+    border:1px solid;
+}
+table{
+    border-collapse: collapse;
+    border:1px solid;
+    margin:15px;
+}
