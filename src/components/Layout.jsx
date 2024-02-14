@@ -1,12 +1,24 @@
 import {React} from "react"
-import {Outlet} from "react-router-dom";
+import {Outlet,Link} from "react-router-dom";
 import SearchBar from "./SearchBar.jsx";
+import ClassList from "./ClassList.jsx";
 
 export default function Layout(){
     return(
         <div>
-            <SearchBar/>
-            <Outlet/>
+            <div>
+                <Link to="">
+                    <button>
+                        home
+                    </button>
+                </Link>
+                <h1>Chemical Compounds at Cornell College</h1>
+                <SearchBar/>
+                <ClassList/>
+            </div>
+            <div>
+                <Outlet/>
+            </div>
         </div>
     )
 }

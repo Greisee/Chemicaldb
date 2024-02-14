@@ -5,7 +5,6 @@ import "./page.css";
 
 export default function ChemicalPage(){
     const loc=useLocation();
-    console.log(loc)
     return(
         <div>
             <h2>{data[loc.state.pick][0]}</h2>
@@ -14,7 +13,7 @@ export default function ChemicalPage(){
                     <table>
                         <tbody>
                             {data[loc.state.pick].slice(1,9).map((val,ind)=>(
-                                <tr key={val}>
+                                <tr key={"1-"+ind}>
                                     <td>{headers[ind]}</td>
                                     <td>{val}</td>
                                 </tr>
@@ -27,7 +26,7 @@ export default function ChemicalPage(){
                     <table>
                         <tbody>
                             {data[loc.state.pick].slice(10,14).map((val,ind)=>(
-                                <tr key={val}>
+                                <tr key={"2-"+ind}>
                                     <td>{headers[ind+8]}</td>
                                     {val.map((val2,ind2)=>(
                                         <td key={ind2}>{val2}</td>

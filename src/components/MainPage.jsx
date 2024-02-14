@@ -6,7 +6,6 @@ export default function MainPage(){
     return(
         <div>
             Home Page
-            <Link state={{pick:0}} to={"/ChemicalPage"}>acid</Link>
         </div>
     )
 }
