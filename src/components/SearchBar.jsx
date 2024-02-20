@@ -26,7 +26,7 @@ export default function SearchBar(){
             {(term!="")&&(
                 <div>
                     {disp.slice(0,5).map((val,ind)=>(
-                        <Link state={{pick:val}} to={"/ChemicalPage"} key={ind}>
+                        <Link state={{pick:val}} to={"/Chemicaldb/ChemicalPage"} key={ind}>
                             <div>
                                 {data[val][0]}
                             </div>
