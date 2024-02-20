@@ -21,7 +21,7 @@ export default function ClassPage(){
     return(
         <div>
             {chems.map((val,ind)=>(
-                <Link to="/ChemicalPage" state={{pick:ind}}key={ind}>
+                <Link to="/Chemicaldb/ChemicalPage" state={{pick:ind}}key={ind}>
                     <div>
                         {data[val][0]}
                     </div>

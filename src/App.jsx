@@ -8,9 +8,9 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter  basename={"/Chemicaldb"}>
       <Routes>
-        <Route path="/" element={<Layout/>}>
+        <Route path="/Chemicaldb/" element={<Layout/>}>
           <Route index element={<MainPage/>}/>
           <Route path="ChemicalPage" element={<ChemicalPage/>}/>
           <Route path="ClassPage" element={<ClassPage/>}/>
