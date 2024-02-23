@@ -20,6 +20,10 @@ export default function SearchBar(){
         })
         setDisp(res);
     }
+    function clearSearch(){
+        setTerm("");
+        setDisp("");
+    }
     return(
         <div>
             <input type="text" onChange={changeTerm}/>
@@ -27,7 +31,7 @@ export default function SearchBar(){
                 <div>
                     {disp.slice(0,5).map((val,ind)=>(
                         <Link state={{pick:val}} to={"/Chemicaldb/ChemicalPage"} key={ind}>
-                            <div>
+                            <div onClick={clearSearch}>
                                 {data[val][0]}
                             </div>
                         </Link>

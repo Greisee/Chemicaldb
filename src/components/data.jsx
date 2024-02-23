@@ -2,7 +2,7 @@ export const data=[
     [   "Acetic Acid",
         "Acetic Acid",
         "60.05",
-        "C2H4O2",
+        "C₂H₄O₂",
         "64-19-7",
         "-0.17",
         "Yes",
@@ -19,7 +19,7 @@ export const data=[
     [   "Acetone",
         "Propan-2-one",
         "58.08",
-        "C3H6O1",
+        "C₃H₆O₁",
         "67-64-1",
         "-0.1",
         "Yes",
@@ -36,7 +36,7 @@ export const data=[
     [   "Chloroform",
         "Trichloromethane",
         "119.37",
-        "C1H1Cl3",
+        "C₁H₁Cl₃",
         "67-66-3",
         "2.3 or 1.97",
         "Partially",
@@ -45,20 +45,19 @@ export const data=[
         "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?cid=6212&t=l",
         ["Alkyl Halide"],
         ["Known as something you put on a rag to knock people out, chloroform is also a solvent for many molecules (although not very soluble in water)."],
-        ["-colorless liquid that evaporates into a gas  CCl3"],
-        ["-used as an anesthetic during childbirth and surgery (replaced ether) ",
+        ["colorless liquid that evaporates into a gas  CCl3"],
+        ["used as an anesthetic during childbirth and surgery (replaced ether)",
             ],
         ["CHE327"]
     ]
 ]
-
 
 export const headers=[
     "IUPAC Name",
     "MW g/mol",
     "Formula",
     "CAS Number",
-    "logP?",
+    "logP",
     "Soluble?",
     "H Donors",
     "H Acceptors",
