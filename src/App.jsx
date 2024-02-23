@@ -11,7 +11,8 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.DEV ? '/' : '/Chemicaldb/'}
+    >
       <Routes>
         <Route path="/" element={<Layout/>}>
           <Route index element={<MainPage/>}/>
