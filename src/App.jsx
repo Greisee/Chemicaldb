@@ -8,7 +8,7 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.DEV ? '/' : '/Chemicaldb/'}>
+    <BrowserRouter>
       <Routes>
         <Route path="/Chemicaldb/" element={<Layout/>}>
           <Route index element={<MainPage/>}/>
