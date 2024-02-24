@@ -77,3 +77,19 @@ export const classes=[
     "CHE334",
     "BIO328"
 ]
+
+export const funcGroups=[
+    "Alcohol",
+    "Amine",
+    "Carboxylic Acid",
+    "Ketone",
+    "Ester",
+    "Aldehyde",
+    "Ether",
+    "Alkylbenzenes",
+    "Amide",
+    "Aromatic",
+    "Alkyl Halide"
+]
+//export const 
+//https://docs.google.com/spreadsheets/d/e/2PACX-1vTo1a_GQNFVZkQ8o2LlfiJr9u8fRuE8rjKkxvvO6LQGvDF8cCKHIvi3piuSj8wpAQEiVHOWqHjsCZ2F/pub?output=csv

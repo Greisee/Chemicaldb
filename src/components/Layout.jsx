@@ -12,6 +12,11 @@ export default function Layout(){
                         home
                     </button>
                 </Link>
+                <Link to="AdvancedSearch">
+                    <button>
+                        Advanced Search
+                    </button>
+                </Link>
                 <h1>Chemical Compounds at Cornell College</h1>
                 <SearchBar/>
                 <ClassList/>
