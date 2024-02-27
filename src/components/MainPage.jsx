@@ -4,16 +4,6 @@ export default function MainPage() {
     return (
         <div>
             Home Page
-            <table>
-                <tbody>
-                    <tr>
-                        
-                    </tr>
-                    
-                </tbody>
-
-            </table>
-
         </div>
     )
 }

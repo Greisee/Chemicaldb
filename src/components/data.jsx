@@ -8,36 +8,36 @@ const links=[
 ]
 export const info={
     headers:[],
-    data:[]
+    data:[],
+    classes:[]
 }
 export function getData(){
     initData();
     function initData(){
-        let ndata=[];
         links.forEach((l,ind)=>{
             axios.get(l)
                 .then((response) => {
-                    const parsed = parseCSV(response.data)
-                    //ndata.push(parsed)
-                    //console.log(parsed)
-                    console.log(info.data)
+                    parseCSV(response.data)
                 })
                 .catch((error) => {
                     console.log(error)
                 })
         })
-        //console.log(ndata)
-        info.data=ndata; 
         return true;
     }
     function parseCSV(txt) {
         const rows = txt.split(/\r?\n/);
-        const nheaders = rows[0].split("\t");
-        info.headers=nheaders;
-        const ndata = [];
-        for(let i=1;i<rows.length;i++){
+        const classNow=rows[0].split("\t")[0];
+        if(info.classes.indexOf(classNow)==-1){
+            info.classes.push(classNow)
+        }
+        if(info.headers.length===0){
+            const nheaders = rows[2].split("\t");
+            info.headers=nheaders;
+        }
+        for(let i=3;i<rows.length;i++){
             const rowData = rows[i].split('\t');
-            //console.log(rowData)
+            rowData.push(classNow)
             let good=true
             info.data.forEach((i)=>{
                 if(i[0]===rowData[0]){
@@ -48,22 +48,8 @@ export function getData(){
                 info.data.push(rowData)
             }
         }
-       
-        return ndata;            
     }
 }
-
-export const classes=[
-    "CHE121",
-    "CHE122",
-    "CHE202",
-    "CHE225",
-    "CHE326",
-    "CHE327",
-    "CHE334",
-    "BIO328"
-]
-
 export const funcGroups=[
     "Alcohol",
     "Amine",
