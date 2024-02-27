@@ -5,6 +5,7 @@ import Error404 from "./Error404.jsx";
 
 export default function ClassList(){
     const[ready,setReady]=useState(false);
+    const[classes,setClasses]=useState([]);
     useEffect(()=>{
         checkInfo();
     },[])
