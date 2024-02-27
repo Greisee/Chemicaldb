@@ -3,13 +3,13 @@ import {info} from "./data.jsx";
 import {Link} from "react-router-dom";
 import Error404 from "./Error404.jsx";
 
-export default function ClassList(props){
+export default function ClassList(){
     const[ready,setReady]=useState(false);
     useEffect(()=>{
         checkInfo();
     },[])
     function checkInfo(){
-        if(props.classes.length!==0){
+        if(info.classes.length!==0){
             setReady(true)
         }
         else{
@@ -20,7 +20,7 @@ export default function ClassList(props){
         return(
             <div>
                 <h3>Classes:</h3> 
-                {props.classes.map((val,ind)=>(
+                {info.classes.map((val,ind)=>(
                     <Link to="/ClassPage"state={{class:val}}key={ind}>
                         <button >{val}</button>
                     </Link>

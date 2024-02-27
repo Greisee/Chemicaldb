@@ -2,7 +2,7 @@ import {React,useEffect,useLayoutEffect} from "react"
 import {Outlet,Link} from "react-router-dom";
 import SearchBar from "./SearchBar.jsx";
 import ClassList from "./ClassList.jsx";
-import {getData,info} from "./data.jsx"
+import {getData} from "./data.jsx"
 
 export default function Layout(){
     useLayoutEffect(()=>{
@@ -23,7 +23,7 @@ export default function Layout(){
                 </Link>
                 <h1>Chemical Compounds at Cornell College</h1>
                 <SearchBar/>
-                <ClassList classes={info.classes}/>
+                <ClassList/>
             </div>
             <div>
                 <Outlet/>

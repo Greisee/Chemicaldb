@@ -12,13 +12,10 @@ export default function ClassPage(){
     function getChems(){
         let res=[];
         info.data.forEach((d,ind)=>{
-            console.log(d[31])
-            console.log(loc.state.class)
-            if(d[32]==loc.state.class){
+            if(d[d.length-1]==loc.state.class){
                 res.push(ind)
             }
         })
-        console.log(res)
         setChems(res);
     }
     return(

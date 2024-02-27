@@ -18,7 +18,7 @@ export default function ChemicalPage(){
                                 ))}
                             </tr>
                             <tr>
-                                {info.data[loc.state.pick].slice(0,32).map((val2,ind2)=>(
+                                {info.data[loc.state.pick].slice(0,31).map((val2,ind2)=>(
                                     <td key={ind2}>
                                         {val2}
                                     </td>
