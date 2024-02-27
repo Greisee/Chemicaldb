@@ -1,5 +1,5 @@
 import {React, useState,useEffect} from "react";
-import {data} from "./data.jsx";
+import {info} from "./data.jsx";
 import {Link} from "react-router-dom"
 
 export default function SearchBar(){
@@ -13,7 +13,7 @@ export default function SearchBar(){
     }
     function findBest(){
         let res=[];
-        data.forEach((d,ind)=>{
+        info.data.forEach((d,ind)=>{
             if(d[0].substring(0,term.length).toLowerCase()===term.toLowerCase()){
                 res.push(ind)
             }
@@ -32,7 +32,7 @@ export default function SearchBar(){
                     {disp.slice(0,5).map((val,ind)=>(
                         <Link state={{pick:val}} to={"/Chemicaldb/ChemicalPage"} key={ind}>
                             <div onClick={clearSearch}>
-                                {data[val][0]}
+                                {info.data[val][0]}
                             </div>
                         </Link>
                     ))}

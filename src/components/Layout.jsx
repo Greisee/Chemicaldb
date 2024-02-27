@@ -1,9 +1,13 @@
-import {React} from "react"
+import {React,useEffect,useLayoutEffect} from "react"
 import {Outlet,Link} from "react-router-dom";
 import SearchBar from "./SearchBar.jsx";
 import ClassList from "./ClassList.jsx";
+import {getData} from "./data.jsx"
 
 export default function Layout(){
+    useLayoutEffect(()=>{
+        getData();
+    },[])
     return(
         <div>
             <div>
