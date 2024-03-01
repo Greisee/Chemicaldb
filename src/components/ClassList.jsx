@@ -14,7 +14,7 @@ export default function ClassList(){
             setReady(true)
         }
         else{
-            setTimeout(checkInfo,1000)
+            setTimeout(checkInfo,2000);
         }
     }
     if(ready){

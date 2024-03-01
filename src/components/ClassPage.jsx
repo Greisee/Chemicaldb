@@ -12,7 +12,7 @@ export default function ClassPage(){
     function getChems(){
         let res=[];
         info.data.forEach((d,ind)=>{
-            if(d[d.length-1]==loc.state.class){
+            if(d[d.length-1]===loc.state.class){
                 res.push(ind)
             }
         })
@@ -21,7 +21,7 @@ export default function ClassPage(){
     return(
         <div>
             {chems.map((val,ind)=>(
-                <Link to="/ChemicalPage" state={{pick:ind}}key={ind}>
+                <Link to="/ChemicalPage" state={{chem:info.data[val]}}key={ind}>
                     <div>
                         {info.data[val][0]}
                     </div>
