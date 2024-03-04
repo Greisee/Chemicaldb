@@ -18,3 +18,29 @@ table{
     border:1px solid;
     margin:15px;
 }
+.advCrit{
+    display: flex;
+    flex-direction: row;
+}
+.funcParent{
+    width: 40%;
+}
+.funcs{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+}
+.minMax{
+    display: flex;
+    flex-direction: column;
+    width:15%;
+    justify-content:center;
+    align-items: center;
+}
+.minMaxLabel{
+    width:50%;
+}
+advMain{
+    justify-content:center;
+    align-items: center;
+}

@@ -11,17 +11,17 @@ export default function ChemicalPage(){
     useEffect(()=>{
         console.log(loc.state.chem)
         if(loc.state.chem.length==34){
-            let arr1=loc.state.chem.slice(1,7);
+            let arr1=loc.state.chem.slice(1,7);//everything else
             let head1=info.headers.slice(1,7);
             arr1=arr1.concat(loc.state.chem.slice(16,18));
             head1=head1.concat(info.headers.slice(16,18));
             arr1=arr1.concat(loc.state.chem.slice(30,-1));
             head1=head1.concat(info.headers.slice(30));
 
-            let arr2=loc.state.chem.slice(7,16);
+            let arr2=loc.state.chem.slice(7,16);//chem form
             let head2=info.headers.slice(7,16);
 
-            let arr3=loc.state.chem.slice(18,30);
+            let arr3=loc.state.chem.slice(18,30);//func groups
             let head3=info.headers.slice(18,30);
 
             let func=[];
