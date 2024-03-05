@@ -1,6 +1,7 @@
 import {React, useState,useEffect} from "react";
 import {info} from "./data.jsx";
 import {Link} from "react-router-dom"
+import "./page.css"
 
 export default function SearchBar(){
     const[term,setTerm]=useState("");
@@ -25,12 +26,12 @@ export default function SearchBar(){
         setDisp("");
     }
     return(
-        <div>
+        <div className="sbMain">
             <input type="text" onChange={changeTerm}/>
             {(term!="")&&(
                 <div>
                     {disp.slice(0,5).map((val,ind)=>(
-                        <Link state={{pick:val}} to={"/ChemicalPage"} key={ind}>
+                        <Link state={{chem:info.data[val]}} to={"/ChemicalPage"} key={ind}>
                             <div onClick={clearSearch}>
                                 {info.data[val][0]}
                             </div>

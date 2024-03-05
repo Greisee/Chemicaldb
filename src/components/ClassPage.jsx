@@ -2,6 +2,7 @@ import {React,useEffect,useState} from "react";
 import {info} from "./data.jsx";
 import {useLocation,Link} from "react-router-dom";
 import {Helmet} from "react-helmet";
+import "./page.css";
 
 
 export default function ClassPage(){
@@ -20,7 +21,7 @@ export default function ClassPage(){
         setChems(res);
     }
     return(
-        <div>
+        <div className="classPageMain">
             <Helmet>
                 <title>{loc.state.class}</title>
             </Helmet>

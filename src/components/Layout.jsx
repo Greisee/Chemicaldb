@@ -3,6 +3,7 @@ import {Outlet,Link} from "react-router-dom";
 import SearchBar from "./SearchBar.jsx";
 import ClassList from "./ClassList.jsx";
 import {getData} from "./data.jsx"
+import "./page.css"
 
 export default function Layout(){
     useLayoutEffect(()=>{
@@ -10,10 +11,11 @@ export default function Layout(){
     },[])
     return(
         <div>
-            <div>
+            <h1>Chemical Compounds at Cornell College</h1>
+            <div className="aboveMain">
                 <Link to="">
                     <button>
-                        home
+                        Home Page
                     </button>
                 </Link>
                 <Link to="AdvancedSearch">
@@ -21,13 +23,20 @@ export default function Layout(){
                         Advanced Search
                     </button>
                 </Link>
-                <h1>Chemical Compounds at Cornell College</h1>
                 <SearchBar/>
                 <ClassList/>
             </div>
-            <div>
+            <div className="outlet">
                 <Outlet/>
             </div>
+            <footer>
+                <span>
+                    Produced by Rachael Adewusi, Thomas Cook, and Ingrid Peters
+                    of the Cornell College Chemistry Department
+                    <br/>
+                    Programmed by Torii Greiskalns
+                </span>
+            </footer>
         </div>
     )
 }

@@ -1,26 +1,68 @@
+body{
+    background-color: #D5D5D5;
+    color:#52278A;
+}
+h1,h2,h3,h4{
+    cursor: default;
+}
+footer{
+    cursor: default;
+    padding-top:5vh;
+    border-color: #AE98D7;
+    border-width: 1px;
+    border-style:solid none none none;
+}
+button{
+    margin:3px;
+    background-color: #bababa;
+    color:#52278A
+}
+button:hover{
+    background-color: #838383;
+}
+button:focus,
+button:focus-visible {
+  outline: #AE98D7 4px auto ;
+}
 td{
+    cursor: default;
     height:50px;
-    width:150px;
+    width:150px;   
+    border:1px solid;
 }
 img{
     width:200px;
     height:200px;
 }
-.mainPageDiv{
-    display: flex;
-    flex-direction: row;
+input{
+    background-color: #D5D5D5;
+    color:#7850A8;
 }
-th,td{
+th{
     border:1px solid;
 }
 table{
     border-collapse: collapse;
-    border:1px solid;
     margin:15px;
+    color: #52278A;
+    border: 3px solid;
 }
-.advCrit{
-    display: flex;
-    flex-direction: row;
+.aboveMain{
+    padding-bottom:5vh;
+    border-color: #AE98D7;
+    border-width: 1px;
+    border-style:none none solid none;
+}
+.sbMain{
+    padding-top:2vh;
+}
+.outlet{
+    min-height:40vh;
+    padding-bottom:5vh;
+}
+.classPageMain{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }
 .funcParent{
     width: 40%;
@@ -40,7 +82,18 @@ table{
 .minMaxLabel{
     width:50%;
 }
-advMain{
+.advMain{
     justify-content:center;
     align-items: center;
+}
+.advCrit{
+    display: flex;
+    flex-direction: row;
+}
+.advDisp{
+    border:1px #AE98D7;
+    border-style:solid none none none;
+    padding-top:5vh;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }

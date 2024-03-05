@@ -23,7 +23,7 @@ export default function AdvancedSearch(){
             })
             dat=res;
         }
-        if((molRange[0]-molRange[1])!=0){
+        if(molRange[0]<molRange[1]){
             let mres=[]
             dat.forEach((c)=>{
                 let pi=parseInt(c[6]);
@@ -33,7 +33,7 @@ export default function AdvancedSearch(){
             })
             dat=mres;
         }
-        if((lpRange[0]-lpRange[1])!=0){
+        if(lpRange[0]<lpRange[1]){
             let lres=[]
             dat.forEach((c)=>{
                 let pi=parseInt(c[17]);
@@ -109,15 +109,19 @@ export default function AdvancedSearch(){
                     <label htmlFor="lpMin" >Min</label>
                 </div>
             </div>
-            <div className="advDisp">
-                {disp.map((val,ind)=>(
-                    <div>
-                        <Link to="/ChemicalPage" state={{chem:val}} key={ind}>
-                            {val[0]}
-                        </Link>
-                    </div>
-                ))}
+            <div>
+                <h4>Results</h4>
+                <div className="advDisp">
+                    {disp.map((val,ind)=>(
+                        <div>
+                            <Link to="/ChemicalPage" state={{chem:val}} key={ind}>
+                                {val[0]}
+                            </Link>
+                        </div>
+                    ))}
+                </div>
             </div>
+            
         </div>
     )
 }
