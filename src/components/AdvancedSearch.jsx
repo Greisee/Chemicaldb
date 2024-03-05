@@ -1,6 +1,6 @@
 import {React,useState,useEffect} from "react";
-import {funcGroups} from "./data.jsx";
-import {info} from "./data.jsx";
+import {funcGroups,info} from "./data.jsx";
+import {Link} from "react-router-dom";
 import "./page.css"
 
 export default function AdvancedSearch(){
@@ -33,6 +33,16 @@ export default function AdvancedSearch(){
             })
             dat=mres;
         }
+        if((lpRange[0]-lpRange[1])!=0){
+            let lres=[]
+            dat.forEach((c)=>{
+                let pi=parseInt(c[17]);
+                if(pi<lpRange[1]&&pi>lpRange[0]){
+                    lres.push(c);
+                }
+            })
+            dat=lres;
+        }
         if(dat.length!==info.data.length){
             setDisp(dat)
         }
@@ -46,6 +56,17 @@ export default function AdvancedSearch(){
         }
         else{
             console.log("Mol range event undefined")
+        }
+    }
+    function setLP(ind,evt){
+        if(ind===1&&evt.target.value!==undefined){
+            setLpRange([lpRange[0],parseInt(evt.target.value)]);
+        }
+        else if(evt.target.value!==undefined){
+            setLpRange([parseInt(evt.target.value),lpRange[1]]);
+        }
+        else{
+            console.log("LogP range event undefined")
         }
     }
     return(
@@ -80,17 +101,21 @@ export default function AdvancedSearch(){
                 </div>
                 <div className="minMax">
                     <h4>LogP</h4>
-                    <input type="number" id="lpMax" className="minMaxLabel"/>
+                    <input type="number" id="lpMax" className="minMaxLabel" 
+                        onChange={evt=>setLP(1,evt)}/>
                     <label htmlFor="lpMax">Max</label>
-                    <input type="number" id="lpMin"className="minMaxLabel"/>
+                    <input type="number" id="lpMin"className="minMaxLabel"
+                        onChange={evt=>setLP(0,evt)}/>
                     <label htmlFor="lpMin" >Min</label>
                 </div>
             </div>
             <div className="advDisp">
                 {disp.map((val,ind)=>(
-                    <p key={val}>
-                        {val[0]}
-                    </p>
+                    <div>
+                        <Link to="/ChemicalPage" state={{chem:val}} key={ind}>
+                            {val[0]}
+                        </Link>
+                    </div>
                 ))}
             </div>
         </div>

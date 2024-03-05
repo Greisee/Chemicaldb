@@ -3,6 +3,7 @@ import {info} from "./data.jsx";
 import {useLocation} from "react-router-dom";
 import Error404 from "./Error404.jsx"
 import "./page.css";
+import {Helmet} from "react-helmet";
 
 export default function ChemicalPage(){
     const [ready,setReady]=useState(false);
@@ -42,6 +43,9 @@ export default function ChemicalPage(){
     if(ready){
         return(
             <div>
+                <Helmet>
+                    <title>{loc.state.chem[0]}</title>
+                </Helmet>
                 <h2>{loc.state.chem[0]}</h2>
                 <div className="mainPageDiv">
                     <div>

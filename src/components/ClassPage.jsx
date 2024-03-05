@@ -1,6 +1,7 @@
 import {React,useEffect,useState} from "react";
 import {info} from "./data.jsx";
 import {useLocation,Link} from "react-router-dom";
+import {Helmet} from "react-helmet";
 
 
 export default function ClassPage(){
@@ -20,6 +21,9 @@ export default function ClassPage(){
     }
     return(
         <div>
+            <Helmet>
+                <title>{loc.state.class}</title>
+            </Helmet>
             {chems.map((val,ind)=>(
                 <Link to="/ChemicalPage" state={{chem:info.data[val]}}key={ind}>
                     <div>
