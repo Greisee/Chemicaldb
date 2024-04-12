@@ -3,8 +3,22 @@ import axios from "axios";
 
 
 const links=[
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTo1a_GQNFVZkQ8o2LlfiJr9u8fRuE8rjKkxvvO6LQGvDF8cCKHIvi3piuSj8wpAQEiVHOWqHjsCZ2F/pub?gid=0&single=true&output=tsv",
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTo1a_GQNFVZkQ8o2LlfiJr9u8fRuE8rjKkxvvO6LQGvDF8cCKHIvi3piuSj8wpAQEiVHOWqHjsCZ2F/pub?gid=2016937024&single=true&output=tsv"
+    //"https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=1776806692&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=402436458&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=1935199445&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=410433626&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=1282116976&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=601279232&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=1884025620&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=100774433&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=1324941904&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=1437155810&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=328292838&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=19939475&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=25952703&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=291207130&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=1514666763&single=true&output=tsv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXQglXMrGVW1oKhvQ2Uryt2sM0E4K4stdDl0Y2zXof4Ry2wUFHi7XGL5wPpYdBsHL7WTqBOgL5wsjI/pub?gid=203475841&single=true&output=tsv"
 ]
 export const info={
     headers:[],
@@ -49,6 +63,9 @@ export function getData(){
             }
         }
     }
+}
+export function classCount(){
+    return links.length;
 }
 export const funcGroups=[
     "Alcohol",

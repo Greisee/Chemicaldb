@@ -10,7 +10,6 @@ export default function ChemicalPage(){
     const [arrs,setArrs]=useState([]);
     const [heads,setHeads]=useState([]);
     useEffect(()=>{
-        console.log(loc.state.chem)
         if(loc.state.chem.length==34){
             let arr1=loc.state.chem.slice(1,7);//everything else
             let head1=info.headers.slice(1,7);
