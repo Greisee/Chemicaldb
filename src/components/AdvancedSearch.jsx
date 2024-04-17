@@ -5,9 +5,9 @@ import "./page.css"
 
 export default function AdvancedSearch(){
     const[disp,setDisp]=useState([])
-    const[molRange,setMolRange]=useState([0,0])
-    const[carRange,setCarRange]=useState([0,0])
-    const[lpRange,setLpRange]=useState([0,0])
+    const[molRange,setMolRange]=useState([0,null])
+    const[carRange,setCarRange]=useState([0,null])
+    const[lpRange,setLpRange]=useState([null,null])
     const[func,setFunc]=useState([])
     useEffect(recalcDisp,[molRange,carRange,lpRange,func])
     function recalcDisp(){
@@ -23,25 +23,41 @@ export default function AdvancedSearch(){
             })
             dat=res;
         }
-        if(molRange[0]<molRange[1]){
+        if(molRange[1]!=null){
             let mres=[]
             dat.forEach((c)=>{
                 let pi=parseInt(c[6]);
-                if(pi<molRange[1]&&pi>molRange[0]){
+                if(pi<=molRange[1]&&pi>=molRange[0]){
                     mres.push(c);
                 }
             })
-            dat=mres;
+            if(mres.length!==0){
+                dat=mres;
+            }
         }
-        if(lpRange[0]<lpRange[1]){
+        if(lpRange[0]!=null&&lpRange[1]!=null){
             let lres=[]
             dat.forEach((c)=>{
                 let pi=parseInt(c[17]);
-                if(pi<lpRange[1]&&pi>lpRange[0]){
+                if(pi<=lpRange[1]&&pi>=lpRange[0]){
                     lres.push(c);
                 }
             })
-            dat=lres;
+            if(lres.length!==0){
+                dat=lres;
+            }
+        }
+        if(carRange[1]!=null){
+            let cres=[]
+            dat.forEach((c)=>{
+                let pi=parseInt(c[7]);
+                if(pi<=carRange[1]&&pi>=carRange[0]){
+                    cres.push(c);
+                }
+            })
+            if(cres.length!==0){
+                dat=cres;
+            }
         }
         if(dat.length!==info.data.length){
             setDisp(dat)
@@ -69,6 +85,17 @@ export default function AdvancedSearch(){
             console.log("LogP range event undefined")
         }
     }
+    function setCar(ind,evt){
+        if(ind===1&&evt.target.value!==undefined){
+            setCarRange([carRange[0],parseInt(evt.target.value)]);
+        }
+        else if(evt.target.value!==undefined){
+            setCarRange([parseInt(evt.target.value),carRange[1]]);
+        }
+        else{
+            console.log("carbon range event undefined")
+        }
+    }
     return(
         <div className="advMain">
             <div className="advCrit">
@@ -85,35 +112,41 @@ export default function AdvancedSearch(){
                 </div>
                 <div className="minMax">
                     <h4>Molar Weight</h4>
-                    <input type="number" id="molMax" className="minMaxLabel" 
+                    <input type="number" step=".01" id="molMax" className="minMaxLabel" 
                         onChange={evt=>setMol(1,evt)}/>
                     <label htmlFor="molMax">Max</label>
-                    <input type="number" id="molMin" className="minMaxLabel" 
+                    <input type="number" step=".01" min="0" id="molMin" className="minMaxLabel" 
                         onChange={evt=>setMol(0,evt)}/>
                     <label htmlFor="molMin">Min</label>
                 </div>
                 <div className="minMax">
                     <h4>Carbons</h4>
-                    <input type="number" id="carMax" className="minMaxLabel"/>
+                    <input type="number" step="1" id="carMax" className="minMaxLabel"
+                        onChange={evt=>setCar(1,evt)}/>
                     <label htmlFor="carMax">Max</label>
-                    <input type="number" id="carMin"className="minMaxLabel"/>
+                    <input type="number" step="1" min="0" id="carMin"className="minMaxLabel"
+                        onChange={evt=>setCar(0,evt)}/>
                     <label htmlFor="carMin" >Min</label>
                 </div>
                 <div className="minMax">
                     <h4>LogP</h4>
-                    <input type="number" id="lpMax" className="minMaxLabel" 
+                    <input type="number" step=".01" id="lpMax" className="minMaxLabel" 
                         onChange={evt=>setLP(1,evt)}/>
                     <label htmlFor="lpMax">Max</label>
-                    <input type="number" id="lpMin"className="minMaxLabel"
+                    <input type="number" step=".01" id="lpMin"className="minMaxLabel"
                         onChange={evt=>setLP(0,evt)}/>
                     <label htmlFor="lpMin" >Min</label>
                 </div>
             </div>
             <div>
-                <h4>Results</h4>
+                <h4>Results for 
+                    {(molRange[1]>molRange[0]?" mol range,":"") + 
+                    (carRange[1]>carRange[0]?" carbon range,":"") +
+                    (lpRange[1]>lpRange[0]?" logP range":"")}
+                </h4>
                 <div className="advDisp">
                     {disp.map((val,ind)=>(
-                        <div>
+                        <div key={ind}>
                             <Link to="/ChemicalPage" state={{chem:val}} key={ind}>
                                 {val[0]}
                             </Link>

@@ -46,7 +46,7 @@ export default function ChemicalPage(){
                     <title>{loc.state.chem[0]}</title>
                 </Helmet>
                 <h2>{loc.state.chem[0]}</h2>
-                <div className="mainPageDiv">
+                <div>
                     <div>
                         <h3>Basics:</h3>
                         <table>

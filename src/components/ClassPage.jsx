@@ -25,13 +25,17 @@ export default function ClassPage(){
             <Helmet>
                 <title>{loc.state.class}</title>
             </Helmet>
-            {chems.map((val,ind)=>(
-                <Link to="/ChemicalPage" state={{chem:info.data[val]}}key={ind}>
-                    <div>
-                        {info.data[val][0]}
-                    </div>
-                </Link>
-            ))}
+            <h2>{loc.state.class}</h2>
+            <div className="classPageSub">
+                {chems.map((val,ind)=>(
+                    <Link to="/ChemicalPage" state={{chem:info.data[val]}}key={ind}>
+                        <div className="chemInClass">
+                            {info.data[val][0]}
+                        </div>
+                    </Link>
+                ))}
+            </div>
+            
         </div>
     )
 }

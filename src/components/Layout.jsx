@@ -34,7 +34,7 @@ export default function Layout(){
                     Produced by Rachael Adewusi, Thomas Cook, and Ingrid Peters
                     of the Cornell College Chemistry Department under supervision of Jai Shanata
                     <br/>
-                    Programmed by Torii Greiskalns
+                    Site programmed by Torii Greiskalns
                 </span>
             </footer>
         </div>
