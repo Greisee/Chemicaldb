@@ -23,6 +23,11 @@ export default function Layout(){
                         Advanced Search
                     </button>
                 </Link>
+                <Link to="Structures">
+                    <button>
+                        Structure Images
+                    </button>
+                </Link>
                 <SearchBar/>
                 <ClassList/>
             </div>
